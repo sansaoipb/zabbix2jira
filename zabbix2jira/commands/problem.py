@@ -158,7 +158,7 @@ class Problem(Base):
             return False
 
     def _ack_alert(self, zabbix_api, event_id, issue_id):
-        zabbix_url = self._get_config_str('ZABBIX', 'ZABBIX_URL')
+        zabbix_url = self._get_config_str('Zabbix', 'ZABBIX_URL')
         issue_url = zabbix_url + "browse/%s" % issue_id
 
         try:
