@@ -32,7 +32,7 @@ Usage
 
 Default paths:
 
-- Configuration: */etc/zabbix/zabbix2jira.cfg*
+- Configuration: */etc/zabbix2jira.cfg*
 - Log: */var/log/zabbix2jira.log*
 - Cache Directory: */var/cache/zabbix2jira*
 
@@ -58,7 +58,7 @@ Zabbix Integration
 
 Create an action that calls the script with the proper variables.
 
-We create a action named ``Zabbix2Dashboard`` with the conditions:
+We create a action named ``zabbix2jira`` with the conditions:
 
 * A Maintenance status not in maintenance
 * B Trigger value = PROBLEM
@@ -73,7 +73,7 @@ because on this version, problem and recovery operations are separate.*
 Then on the *Operations* Tab, create a step that executes a ``Custom script``
 on the Zabbix Server with the following commands::
 
-    zabbix2jira -v -i {EVENT.ID} {TRIGGER.STATUS} "[Zabbix Alert] {HOSTNAME} - {TRIGGER.NAME}" "Alert Details"
+    zabbix2jira -v -i {EVENT.ID} PROJECT {TRIGGER.STATUS} "[Zabbix Alert] {HOSTNAME} - {TRIGGER.NAME}" "Alert Details"
 
 You can also use the script as a user media and send a message to it.
 
@@ -88,16 +88,16 @@ Here are some examples for running zabbix2jira.
 
 Create an issue with component ``Alert``::
 
-    zabbix2jira -v -p Alert PROBLEM "[Zabbix Alert] PROBLEM" "Alert Details"
+    zabbix2jira -v -p Alert PROJECT PROBLEM "[Zabbix Alert] PROBLEM" "Alert Details"
 
 With the zabbix backend enabled, track the event id (123) to acknowledge it::
 
-    zabbix2jira -v -i 123 PROBLEM "[Zabbix Alert] PROBLEM" "Alert Details"
+    zabbix2jira -v -i 123 PROJECT PROBLEM "[Zabbix Alert] PROBLEM" "Alert Details"
 
 Recover the previous issue::
 
-    zabbix2jira -v -i 123 OK "[Zabbix Alert] PROBLEM "Alert Details"
+    zabbix2jira -v -i 123 PROJECT OK "[Zabbix Alert] PROBLEM "Alert Details"
 
 Create an issue with type ``Bug``::
 
-    zabbix2jira -v -t Bug PROBLEM "[Zabbix Alert] PROBLEM" "Alert Details"
+    zabbix2jira -v -t Bug PROJECT PROBLEM "[Zabbix Alert] PROBLEM" "Alert Details"

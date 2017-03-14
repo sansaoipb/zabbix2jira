@@ -2,7 +2,7 @@
 """zabbix2jira
 
 Usage:
-    zabbix2jira.py [options] ACTION <project> <subject> <message>
+    zabbix2jira.py [options] <project> ACTION <subject> <message>
     zabbix2jira.py [options] clean
     zabbix2jira.py --version
     zabbix2jira.py -h
@@ -12,8 +12,8 @@ Arguments:
     clean     Remove all files from the cache
 
 Examples:
-    zabbix2jira.py problem INFRA "PROBLEM High Alarm" "Description of alarm"
-    zabbix2jira.py ok INFRA "PROBLEM High Alarm" "Recover of alarm"
+    zabbix2jira.py INFRA PROBLEM "High Alarm" "Description of alarm"
+    zabbix2jira.py INFRA OK "High Alarm" "Recover of alarm"
 
 Options:
     -i, --event-id=<id>     Unique event ID from Zabbix (tracking)
