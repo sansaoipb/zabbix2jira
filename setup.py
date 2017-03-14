@@ -23,11 +23,11 @@ config = {
     'url': 'https://github.com/Movile/zabbix2jira',
     'author': 'Hugo Cisneiros',
     'author_email': 'hugo.cisneiros@movile.com',
-    'license': 'GPLv3',
+    'license': 'GPL version 3',
     'classifiers': [
         'Intended Audience :: System Administrators',
         'Topic :: Utilities',
-        'License :: GPLv3',
+        'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
         'Natural Language :: English',
         'Operating System :: OS Independent',
         'Programming Language :: Python :: 2',
