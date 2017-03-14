@@ -87,3 +87,7 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+# zabbix2jira files
+config.cfg
+cache/
