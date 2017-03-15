@@ -129,7 +129,7 @@ class Problem(Base):
             'JIRA',
             'JIRA_OPEN_RESOLUTION')
         search_str = ("project = \"%s\" AND resolution = \"%s\" AND "
-                      "summary ~ \"%s\"") % (project, open_res, summary)
+                      "summary ~ '\"%s\"'") % (project, open_res, summary)
         try:
             search = jira_api.search_issues(
                 search_str,
@@ -137,12 +137,12 @@ class Problem(Base):
                 maxResults=1
             )
         except:
-            self.log.debug("Can't find any open issue for the alarm.")
             return False
 
         if len(search) > 0:
             return search[0]
         else:
+            self.log.debug("Can't find any open issue for the alarm.")
             return False
 
     def _search_issue_by_id(self, jira_api, issue_id):
