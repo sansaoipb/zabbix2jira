@@ -13,6 +13,13 @@ inside a JIRA installation.
 Installation
 ------------
 
+You can use ``pip`` to install or upgrade this utility::
+
+    pip install zabbix2jira
+
+Development
+~~~~~~~~~~~
+
 Use the following command under the program directory::
 
     $ pip install -e .
@@ -101,3 +108,9 @@ Recover the previous issue::
 Create an issue with type ``Bug``::
 
     zabbix2jira -v -t Bug PROJECT PROBLEM "[Zabbix Alert] PROBLEM" "Alert Details"
+
+Using as a Media Type
+---------------------
+
+Under the ``contrib`` directory you can find a wrapper to use this as a user
+media type instead of remote command operation.
