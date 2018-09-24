@@ -51,7 +51,7 @@ if [ -n "$EVENT_ID" ]; then
   CMD_ARGS="$CMD_ARGS -i $EVENT_ID"
 fi
 
-COMPONENT=$(echo "$MESSAGE" | egrep "* Component: " | sed -r 's/^\* Component: //' | egrep -o '[a-zA-Z0-9]+')
+COMPONENT=$(echo "$MESSAGE" | egrep "* Component: " | sed -r 's/^\* Component: //' | egrep -o '[a-zA-Z0-9 ]+')
 if [ -n "$COMPONENT" ]; then
   CMD_ARGS="$CMD_ARGS -p $COMPONENT"
   MESSAGE=$(echo "$MESSAGE" | sed '/\* Component: /d')
