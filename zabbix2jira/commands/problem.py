@@ -62,7 +62,7 @@ class Problem(Base):
         # optional labels
         issue_labels = self.options['--labels']
         if (issue_labels):
-            issue['labels'] = issue_component_name.split(',')
+            issue['labels'] = issue_labels.split(',')
 
         # create the issue
         try:
