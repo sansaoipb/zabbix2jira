@@ -21,6 +21,7 @@ Options:
         Task]
     -p, --component=<name>  Component name from JIRA Project [default:
         False]
+    -l, --labels=<labels>   Labels, separated by commas [default: False]
     -c, --config=<file>     Configuration file [default:
         /etc/zabbix/zabbix2jira.cfg]
     -o, --output=<file>     Log output to file [default:

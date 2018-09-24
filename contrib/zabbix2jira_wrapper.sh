@@ -57,6 +57,12 @@ if [ -n "$COMPONENT" ]; then
   MESSAGE=$(echo "$MESSAGE" | sed '/\* Component: /d')
 fi
 
+LABELS=$(echo "$MESSAGE" | egrep "* Labels: " | sed -r 's/^\* Labels: //' | egrep -o '[a-zA-Z0-9,]+')
+if [ -n "$LABELS" ]; then
+  CMD_ARGS="$CMD_ARGS -L $LABELS"
+  MESSAGE=$(echo "$MESSAGE" | sed '/\* Labels: /d')
+fi
+
 ISSUE_TYPE=$(echo "$MESSAGE" | egrep "* Issue Type: " | sed -r 's/^\* Issue Type: //' | egrep -o '[a-zA-Z0-9]+')
 if [ -n "$ISSUE_TYPE" ]; then
   CMD_ARGS="$CMD_ARGS -t $ISSUE_TYPE"

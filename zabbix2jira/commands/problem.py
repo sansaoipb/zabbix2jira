@@ -59,6 +59,11 @@ class Problem(Base):
         if (issue_component_name):
             issue['components'] = [{'name': issue_component_name}]
 
+        # optional labels
+        issue_labels = self.options['--labels']
+        if (issue_labels):
+            issue['labels'] = issue_component_name.split(',')
+
         # create the issue
         try:
             issue = jira_api.create_issue(issue)
