@@ -17,15 +17,14 @@ Examples:
 
 Options:
     -i, --event-id=<id>     Unique event ID from Zabbix (tracking)
-    -t, --issue-type=<type> Issue Type from JIRA Project [default:
-        Task]
-    -p, --component=<name>  Component name from JIRA Project [default:
-        False]
-    -l, --labels=<labels>   Labels, separated by commas [default: False]
-    -c, --config=<file>     Configuration file [default:
-        /etc/zabbix/zabbix2jira.cfg]
-    -o, --output=<file>     Log output to file [default:
-        /var/log/zabbix2jira.log]
+    -t, --issue-type=<type> Issue Type from JIRA Project
+                            [default: Task]
+    -p, --component=<name>  Component name from JIRA Project
+    -l, --labels=<labels>   Labels, separated by commas
+    -c, --config=<file>     Configuration file
+                            [default: /etc/zabbix/zabbix2jira.cfg]
+    -o, --output=<file>     Log output to file
+                            [default: /var/log/zabbix2jira.log]
     -v, --verbose           Verbose output
     -d, --debug             Debug output
     -q, --quiet             Quiet output
